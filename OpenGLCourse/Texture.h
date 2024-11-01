@@ -4,17 +4,17 @@
 
 #include <iostream>
 #include <vector>
-#include <fstream>
+#include "stb_image.h"
 
 class Texture
 {
 public:
+	Texture();
 	Texture(const char *filename, int width, int height, int bitdepth);
 	Texture(const char *filename);
 	~Texture();
 
-	bool LoadTexture(); // Load texture from file
-	//bool LoadTextureA(); // Load texture from file with alpha channel
+	bool LoadTexture();
 	void UseTexture();
 	void ClearTexture();
 private:
@@ -24,10 +24,5 @@ private:
 	std::vector<unsigned char> data;
 
 	const char* fileLocation;
-
-	bool LoadBMP();
-	bool LoadPNG();
-
-	void ConvertBitDepth();
 };
 

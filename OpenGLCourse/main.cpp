@@ -1,6 +1,7 @@
 // OpenGLCourse.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
+#define STB_IMAGE_IMPLEMENTATION
 #include <iostream>
 #include <vector>
 #include <GL/glew.h>
@@ -50,11 +51,11 @@ void CreateObjects()
 	};
 
 	Mesh* testObj = new Mesh();
-	testObj->CreateMesh(vertices, indices, 12, 12);
+	testObj->CreateMesh(vertices, indices, 20, 12);
 	meshList.push_back(testObj);
 
 	Mesh* testObj2 = new Mesh();
-	testObj2->CreateMesh(vertices, indices, 12, 12);
+	testObj2->CreateMesh(vertices, indices, 20, 12);
 	meshList.push_back(testObj2);
 }
 
@@ -79,12 +80,12 @@ int main()
 	camera = Camera(glm::abs(glm::vec3(0.0f, 0.0f, -2.0f)), glm::vec3(0.0f, 1.0f, 0.0f), -90.0f, 0.0f, 1.0f, 0.5f);
 	lastTime = glfwGetTime();
 
-	dirtTexture = Texture("../Textures/dirt.bmp");
+	dirtTexture = Texture("../Textures/dirt.png");
 	if (!dirtTexture.LoadTexture())
 	{
 		return 1;
 	}
-	Texture = Texture("../Textures/brick.bmp");
+	brickTexture = Texture("../Textures/brick.png");
 	if (!brickTexture.LoadTexture())
 	{
 		return 1;
