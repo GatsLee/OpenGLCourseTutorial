@@ -38,8 +38,7 @@ bool Texture::LoadTexture()
 		std::cerr << "Failed to find: " << fileLocation << std::endl;
 		return false;
 	}
-	std::cout << width << " " << height << " " << bitDepth << std::endl;
-
+	
 	glGenTextures(1, &textureID);
 	glBindTexture(GL_TEXTURE_2D, textureID);
 
