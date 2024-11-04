@@ -15,6 +15,7 @@ public:
 	~Texture();
 
 	bool LoadTexture();
+	bool LoadTextureA();
 	void UseTexture();
 	void ClearTexture();
 private:

@@ -9,12 +9,7 @@ public:
 	Material(GLfloat sIntensity, GLfloat shine);
 	~Material();
 
-	void SetAmbient(float r, float g, float b, float a);
-	void SetDiffuse(float r, float g, float b, float a);
-	void SetSpecular(float r, float g, float b, float a);
-	void SetShininess(float shininess);
-
-	void Apply();
+	void UseMaterial(GLuint specularIntensityLocation, GLuint shininessLocation);
 
 private:
 	GLfloat specularIntensity;
